@@ -1,0 +1,1 @@
+AI-powered conversational chatbot using Java, leveraging NLP techniques to deliver personalized stress management advice, achieving an 87% accuracy in matching user input to appropriate stress-relief strategies; Implemented ML algorithms to interpret user inputs and generate contextually relevant responses
