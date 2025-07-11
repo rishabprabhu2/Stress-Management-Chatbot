@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>Dessert in the Desert Browser Game</title>
+    <style>
+      button {
+        color: blanchedalmond;
+        background-color: chocolate;
+        border-color: chocolate;
+        font-size: 16px;
+        border-radius: 8px;
+        position: absolute;
+      }
+
+      button:hover {
+        color: chocolate;
+        background-color: blanchedalmond;
+      }
+
+      p {
+        font-weight: 800;
+      }
+
+      body {
+        background-color: SandyBrown;
+      }
+    </style>
+    <script>
+      let score = 0;
+
+      function randomizeButtonPositions() {
+        let buttons = document.querySelectorAll("button");
+        buttons.forEach((b) => {
+          b.style.left = (Math.random() * 80 + 10) + "%";
+          b.style.top = (Math.random() * 80 + 10) + "%";
+        });
+      }
+
+      function handleDessertClick() {
+        score++;
+        document.getElementById("score-display").textContent = "Score: " + score;
+        randomizeButtonPositions();
+      }
+
+      function handleDesertClick() {
+        score--;
+        document.getElementById("score-display").textContent = "Score: " + score;
+        randomizeButtonPositions();
+      }
+
+      window.onload = function () {
+        randomizeButtonPositions();
+
+        let buttons = document.querySelectorAll("button");
+        buttons.forEach((btn) => {
+          if (btn.textContent === "Dessert") {
+            btn.onclick = handleDessertClick;
+          } else if (btn.textContent === "Desert") {
+            btn.onclick = handleDesertClick;
+          }
+        });
+      };
+    </script>
+    <meta name="author" content="rprabhu7">
+  </head>
+  <body>
+    <p id="score-display">Score: 0</p>
+    <button>Dessert</button>
+    <button>Desert</button>
+    <button>Desert</button>
+    <button>Desert</button>
+    <button>Desert</button>
+    <button>Desert</button>
+    <button>Desert</button>
+    <button>Desert</button>
+  </body>
+</html>
